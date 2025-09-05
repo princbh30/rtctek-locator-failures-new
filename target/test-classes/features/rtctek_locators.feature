@@ -10,52 +10,52 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_id
   Scenario: Broken ID locator
-    When I try to locate by "id" with value "definitely-not-an-id"
+    When I try to locate by "id" with value "menu-item-4711"
     Then the step should fail due to locator issue
 
   @bad_name
   Scenario: Broken NAME locator
-    When I try to locate by "name" with value "notARealNameField"
+    When I try to locate by "name" with value "s"
     Then the step should fail due to locator issue
 
   @bad_classname
   Scenario: Broken CLASSNAME locator
-    When I try to locate by "className" with value "this-class-does-not-exist-xyz"
+    When I try to locate by "className" with value "logo-dark"
     Then the step should fail due to locator issue
 
   @bad_css_1
   Scenario: Broken CSS locator - attribute
-    When I try to locate by "css" with value "a[aria-label='non-existent-label']"
+    When I try to locate by "css" with value "a[aria-label='LinkedIn']"
     Then the step should fail due to locator issue
 
   @bad_css_2
   Scenario: Broken CSS locator - nth-child
-    When I try to locate by "css" with value "header nav ul li:nth-child(99) a"
+    When I try to locate by "css" with value "ul#menu-main-menu li:nth-child(2) a"
     Then the step should fail due to locator issue
 
   @bad_xpath_1
   Scenario: Broken XPATH - wrong id
-    When I try to locate by "xpath" with value "//*[@id='made-up-id-123']/a"
+    When I try to locate by "xpath" with value "//*[@id='menu-item-4711']/a"
     Then the step should fail due to locator issue
 
   @bad_xpath_2
   Scenario: Broken XPATH - brittle index
-    When I try to locate by "xpath" with value "(//a[contains(@href,'contact')])[50]"
+    When I try to locate by "xpath" with value "(//a[contains(@href,'linkedin.com')])[1]"
     Then the step should fail due to locator issue
 
   @bad_linktext
   Scenario: Broken LINKTEXT locator
-    When I try to locate by "linkText" with value "Careers at RTCtek That Probably Doesn't Exist"
+    When I try to locate by "linkText" with value "LinkedIn"
     Then the step should fail due to locator issue
 
   @bad_partiallinktext
   Scenario: Broken PARTIALLINKTEXT locator
-    When I try to locate by "partialLinkText" with value "ThisPartialTextIsWrong"
+    When I try to locate by "partialLinkText" with value "Linked"
     Then the step should fail due to locator issue
 
   @bad_tagname
   Scenario: Broken TAGNAME locator
-    When I try to locate by "tagName" with value "nonexistenttagname"
+    When I try to locate by "tagName" with value "header"
     Then the step should fail due to locator issue
 
   @good_id
