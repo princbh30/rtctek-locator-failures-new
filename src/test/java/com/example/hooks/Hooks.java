@@ -6,7 +6,7 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import com.example.config.RtcConfig;
+import com.rtc.client.RtcWebDriver;
 
 public class Hooks {
 
@@ -25,10 +25,9 @@ public class Hooks {
             options.addArguments("--window-size=1366,768");
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
-            driver = new ChromeDriver(options); // Selenium Manager will resolve the driver
-            
-            // Initialize RTC Smart Driver
-            RtcConfig.initialize(driver);
+            // Create ChromeDriver and wrap it with RtcWebDriver for automatic healing
+            WebDriver chromeDriver = new ChromeDriver(options);
+            driver = new RtcWebDriver(chromeDriver);
             driverInitialized = true;
         }
     }

@@ -1,7 +1,7 @@
 package com.example.steps;
 
 import com.example.hooks.Hooks;
-import com.example.config.RtcConfig;
+// RTC healing is now handled automatically by RtcWebDriver
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -28,8 +28,8 @@ public class LocatorSteps {
         try {
             By locator = getLocator(type, value);
             
-            // Use RTC integration for automatic healing
-            WebElement element = RtcConfig.findElement(locator);
+            // RTC healing is now handled automatically by RtcWebDriver
+            WebElement element = driver.findElement(locator);
             
             System.out.println("✅ Successfully located: " + type + " = " + value);
             System.out.println("🔧 Element found: " + element.getTagName());
