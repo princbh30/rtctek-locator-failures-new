@@ -52,6 +52,15 @@
           <artifactId>jackson-databind</artifactId>
           <version>2.15.3</version>
       </dependency>
+
+      <!-- RTC Smart Driver Client JAR (Local) -->
+      <dependency>
+          <groupId>com.rtc</groupId>
+          <artifactId>rtc-client</artifactId>
+          <version>2.0.0</version>
+          <scope>system</scope>
+          <systemPath>${project.basedir}/lib/rtc-client-2.0.0.jar</systemPath>
+      </dependency>
   </dependencies>
 
   <build>

@@ -10,7 +10,7 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_id
   Scenario: Broken ID locator
-    When I try to locate by "id" with value "menu-item-4711"
+    When I try to locate by "id" with value "menu-main-men"
     Then the step should fail due to locator issue
 
   @bad_name
@@ -20,12 +20,12 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_classname
   Scenario: Broken CLASSNAME locator
-    When I try to locate by "className" with value "logo-dark"
+    When I try to locate by "className" with value "elementor-heading-tit"
     Then the step should fail due to locator issue
 
   @bad_css_1
   Scenario: Broken CSS locator - attribute
-    When I try to locate by "css" with value "a[aria-label='LinkedIn']"
+    When I try to locate by "css" with value "a[href*='linkedin']"
     Then the step should fail due to locator issue
 
   @bad_css_2
@@ -45,12 +45,12 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_linktext
   Scenario: Broken LINKTEXT locator
-    When I try to locate by "linkText" with value "LinkedIn"
+    When I try to locate by "linkText" with value "Contact U"
     Then the step should fail due to locator issue
 
   @bad_partiallinktext
   Scenario: Broken PARTIALLINKTEXT locator
-    When I try to locate by "partialLinkText" with value "Linked"
+    When I try to locate by "partialLinkText" with value "Contact"
     Then the step should fail due to locator issue
 
   @bad_tagname
@@ -60,7 +60,7 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @good_id
   Scenario: Valid ID locator
-    When I try to locate by "id" with value "site-navigation"
+    When I try to locate by "id" with value "menu-main-menu"
     Then the element should be found successfully
 
   @good_classname
@@ -75,11 +75,11 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @good_xpath
   Scenario: Valid XPATH locator
-    When I try to locate by "xpath" with value "//h2[contains(text(),'Our Services')]"
+    When I try to locate by "xpath" with value "//h2[contains(text(),'Services')]"
     Then the element should be found successfully
 
   @good_linktext
   Scenario: Valid LINKTEXT locator
-    When I try to locate by "linkText" with value "Contact"
+    When I try to locate by "linkText" with value "Contact Us"
     Then the element should be found successfully
 

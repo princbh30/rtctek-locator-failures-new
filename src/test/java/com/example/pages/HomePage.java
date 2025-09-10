@@ -2,8 +2,11 @@
 package com.example.pages;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
+/**
+ * Home page class - simplified for RTC integration
+ * All element finding is now handled by RtcConfig
+ */
 public class HomePage extends BasePage {
 
     public HomePage(WebDriver driver) {
@@ -12,9 +15,5 @@ public class HomePage extends BasePage {
 
     public void openHome() {
         open("https://rtctek.com/");
-    }
-
-    public WebElement find(String type, String value) {
-        return by(type, value);
     }
 }

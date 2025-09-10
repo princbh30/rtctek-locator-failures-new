@@ -1,41 +1,42 @@
 package com.example.steps;
 
 import com.example.hooks.Hooks;
-import com.example.pages.HomePage;
+// RTC healing is now handled automatically by RtcWebDriver
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebElement;
 
-import java.time.Duration;
-
+/**
+ * Step definitions for locator testing with RTC Smart Driver integration
+ * All RTC logic is centralized in RtcConfig for minimal client changes
+ */
 public class LocatorSteps {
 
     private final WebDriver driver = Hooks.getDriver();
-    private HomePage home;
 
     @Given("I open the RTCtek homepage")
     public void i_open_the_rtctek_homepage() {
-        home = new HomePage(driver);
-        home.openHome();
+        driver.get("https://rtctek.com/");
     }
 
     @When("I try to locate by {string} with value {string}")
     public void i_try_to_locate_by_with_value(String type, String value) {
         try {
             By locator = getLocator(type, value);
-
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-            wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-
+            
+            // RTC healing is now handled automatically by RtcWebDriver
+            WebElement element = driver.findElement(locator);
+            
             System.out.println("✅ Successfully located: " + type + " = " + value);
+            System.out.println("🔧 Element found: " + element.getTagName());
+            
         } catch (Exception e) {
-            // 🚨 Only log failing locators
-            System.err.println("❌ Locator failed: " + type + " = " + value);
+            System.err.println("❌ Locator failed even after RTC healing: " + type + " = " + value);
+            System.err.println("❌ Error: " + e.getMessage());
             throw e; // keep failing the test
         }
     }
@@ -53,7 +54,10 @@ public class LocatorSteps {
         // success if no exception is thrown
     }
 
-    // 🔹 Helper method: map locator strategy to Selenium By
+    /**
+     * Helper method: map locator strategy to Selenium By
+     * All RTC healing logic is handled by RtcConfig
+     */
     private By getLocator(String type, String value) {
         switch (type.toLowerCase()) {
             case "id":
