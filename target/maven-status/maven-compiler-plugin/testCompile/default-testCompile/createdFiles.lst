@@ -3,5 +3,4 @@ com\example\pages\BasePage.class
 com\example\hooks\Hooks.class
 com\example\runner\CucumberTest.class
 com\example\config\RtcConfig.class
-stepdefinitions\LocatorSteps.class
 com\example\pages\HomePage.class

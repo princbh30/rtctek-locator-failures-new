@@ -5,10 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.Properties;
+import java.util.List;
 import java.io.InputStream;
 import java.io.IOException;
+import java.time.Duration;
 
 /**
  * RTC Smart Driver Configuration Class
@@ -16,15 +20,23 @@ import java.io.IOException;
  * This class provides a single point of configuration for RTC Smart Driver integration.
  * It handles all RTC-related functionality with minimal changes to existing client code.
  * 
+ * Features:
+ * - Automatic locator healing using AI
+ * - Cross-strategy healing (ID → CSS, XPath → LinkText, etc.)
+ * - Centralized configuration management
+ * - Minimal client-side changes required
+ * 
  * Usage:
  * 1. Call RtcConfig.initialize(driver) in your test setup
  * 2. Replace driver.findElement() calls with RtcConfig.findElement()
+ * 3. All RTC healing happens automatically
  */
 public class RtcConfig {
     
     private static RtcIntegration rtcIntegration;
     private static boolean initialized = false;
     private static Properties rtcProperties;
+    private static WebDriverWait wait;
     
     /**
      * Initialize RTC Smart Driver with the given WebDriver instance
@@ -37,8 +49,10 @@ public class RtcConfig {
                 rtcProperties = loadRtcConfig();
                 rtcIntegration = new RtcIntegration();
                 rtcIntegration.setDriver(driver);
+                wait = new WebDriverWait(driver, Duration.ofSeconds(10));
                 initialized = true;
                 System.out.println("🔧 RTC Smart Driver initialized successfully");
+                System.out.println("🔧 RTC HTTP integration initialized");
             } catch (Exception e) {
                 System.err.println("❌ Failed to initialize RTC Smart Driver: " + e.getMessage());
                 e.printStackTrace();
@@ -66,6 +80,44 @@ public class RtcConfig {
     }
     
     /**
+     * Find element with explicit wait and RTC healing support
+     * 
+     * @param locator The locator to find the element with
+     * @return WebElement if found, throws NoSuchElementException if not found
+     */
+    public static WebElement findElementWithWait(By locator) {
+        if (!initialized) {
+            throw new IllegalStateException("RTC not initialized. Call RtcConfig.initialize(driver) first.");
+        }
+        
+        try {
+            return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        } catch (Exception e) {
+            // Fallback to RTC healing
+            return findElement(locator);
+        }
+    }
+    
+    /**
+     * Find elements with RTC healing support
+     * 
+     * @param locator The locator to find elements with
+     * @return List of WebElements found
+     */
+    public static List<WebElement> findElements(By locator) {
+        if (!initialized) {
+            throw new IllegalStateException("RTC not initialized. Call RtcConfig.initialize(driver) first.");
+        }
+        
+        try {
+            return rtcIntegration.findElements(locator);
+        } catch (Exception e) {
+            System.err.println("❌ Error finding elements: " + e.getMessage());
+            throw e;
+        }
+    }
+    
+    /**
      * Find element with RTC healing support (convenience method)
      * 
      * @param driver The WebDriver instance
@@ -87,12 +139,43 @@ public class RtcConfig {
     }
     
     /**
+     * Get RTC configuration property
+     * 
+     * @param key The property key
+     * @return The property value or null if not found
+     */
+    public static String getProperty(String key) {
+        return rtcProperties != null ? rtcProperties.getProperty(key) : null;
+    }
+    
+    /**
+     * Get RTC configuration property with default value
+     * 
+     * @param key The property key
+     * @param defaultValue The default value if property not found
+     * @return The property value or default value
+     */
+    public static String getProperty(String key, String defaultValue) {
+        return rtcProperties != null ? rtcProperties.getProperty(key, defaultValue) : defaultValue;
+    }
+    
+    /**
+     * Check if RTC healing is enabled
+     * 
+     * @return true if healing is enabled, false otherwise
+     */
+    public static boolean isHealingEnabled() {
+        return "true".equalsIgnoreCase(getProperty("rtc.healing.enabled", "true"));
+    }
+    
+    /**
      * Reset RTC configuration (useful for testing)
      */
     public static void reset() {
         rtcIntegration = null;
         initialized = false;
         rtcProperties = null;
+        wait = null;
     }
     
     /**
