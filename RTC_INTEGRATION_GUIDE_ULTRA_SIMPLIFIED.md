@@ -182,8 +182,9 @@ element = driver.findElement(locator);
 
 ## Available WebDriver Factory Methods
 
-The `RtcWebDriverFactory` provides methods for all major browsers:
+The `RtcWebDriverFactory` provides methods for all major browsers and Selenium Grid:
 
+### **Local WebDriver (Single Machine)**
 ```java
 // Chrome
 WebDriver driver = RtcWebDriverFactory.createChromeDriver(options);
@@ -200,9 +201,133 @@ WebDriver driver = RtcWebDriverFactory.createEdgeDriver(); // default options
 // Safari
 WebDriver driver = RtcWebDriverFactory.createSafariDriver(options);
 WebDriver driver = RtcWebDriverFactory.createSafariDriver(); // default options
+```
 
-// Custom WebDriver wrapping
+### **Selenium Grid (Distributed Testing)**
+```java
+// Chrome on Grid
+WebDriver driver = RtcWebDriverFactory.createChromeGridDriver(
+    "http://grid-hub:4444/wd/hub", 
+    chromeOptions
+);
+
+// Firefox on Grid
+WebDriver driver = RtcWebDriverFactory.createFirefoxGridDriver(
+    "http://grid-hub:4444/wd/hub", 
+    firefoxOptions
+);
+
+// Edge on Grid
+WebDriver driver = RtcWebDriverFactory.createEdgeGridDriver(
+    "http://grid-hub:4444/wd/hub", 
+    edgeOptions
+);
+
+// Any browser by name
+WebDriver driver = RtcWebDriverFactory.createGridDriver(
+    "http://grid-hub:4444/wd/hub", 
+    "chrome"
+);
+
+// Custom capabilities
+DesiredCapabilities caps = new DesiredCapabilities();
+caps.setBrowserName("chrome");
+caps.setVersion("latest");
+WebDriver driver = RtcWebDriverFactory.createGridDriver(
+    "http://grid-hub:4444/wd/hub", 
+    caps
+);
+```
+
+### **Custom WebDriver Wrapping**
+```java
+// Wrap any existing WebDriver (local or remote)
 WebDriver driver = RtcWebDriverFactory.wrapWebDriver(yourCustomDriver);
+```
+
+## Selenium Grid Integration
+
+### **Answer to Your Question: Grid Compatibility**
+
+**✅ YES!** Our current implementation now works efficiently with Selenium Grid **without any changes** to your existing test code.
+
+### **How It Works**
+
+1. **RtcWebDriver** wraps any WebDriver (local or remote)
+2. **RtcIntegration** makes HTTP calls to RTC API (works from any machine)
+3. **Healing logic** runs on the client side, not the Grid node
+4. **No Grid configuration changes** needed
+
+### **Grid Integration Example**
+
+```java
+// In your Hooks.java - switch between local and Grid easily
+@Before
+public void setUp() {
+    if (!driverInitialized) {
+        String useGrid = System.getProperty("use.grid", "false");
+        
+        if ("true".equals(useGrid)) {
+            // Use Selenium Grid
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new");
+            driver = RtcWebDriverFactory.createChromeGridDriver(
+                "http://grid-hub:4444/wd/hub", 
+                options
+            );
+        } else {
+            // Use local driver
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new");
+            driver = RtcWebDriverFactory.createChromeDriver(options);
+        }
+        driverInitialized = true;
+    }
+}
+```
+
+### **Running Tests on Grid**
+
+```bash
+# Local execution
+mvn test
+
+# Grid execution
+mvn test -Duse.grid=true
+```
+
+### **Grid Benefits with RTC**
+
+- ✅ **Distributed healing** - Each Grid node can heal locators independently
+- ✅ **Scalable** - Works with any number of Grid nodes
+- ✅ **No Grid changes** - RTC API calls happen from client machines
+- ✅ **Cross-browser healing** - Different browsers on different nodes
+- ✅ **Parallel execution** - Multiple tests healing simultaneously
+
+### **Grid Architecture**
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Test Client   │    │   Test Client   │    │   Test Client   │
+│                 │    │                 │    │                 │
+│ ┌─────────────┐ │    │ ┌─────────────┐ │    │ ┌─────────────┐ │
+│ │RtcWebDriver │ │    │ │RtcWebDriver │ │    │ │RtcWebDriver │ │
+│ └─────────────┘ │    │ └─────────────┘ │    │ └─────────────┘ │
+└─────────┬───────┘    └─────────┬───────┘    └─────────┬───────┘
+          │                      │                      │
+          └──────────────────────┼──────────────────────┘
+                                 │
+                    ┌─────────────▼─────────────┐
+                    │     Selenium Grid Hub     │
+                    │   (http://hub:4444)       │
+                    └─────────────┬─────────────┘
+                                 │
+          ┌──────────────────────┼──────────────────────┐
+          │                      │                      │
+    ┌─────▼─────┐          ┌─────▼─────┐          ┌─────▼─────┐
+    │Chrome Node│          │Firefox    │          │Edge Node  │
+    │           │          │Node       │          │           │
+    └───────────┘          └───────────┘          └───────────┘
 ```
 
 ## Support
