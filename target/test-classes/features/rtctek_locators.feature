@@ -10,7 +10,7 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_id
   Scenario: Broken ID locator
-    When I try to locate by "id" with value "site-navigatio"
+    When I try to locate by "id" with value "menu-main-men"
     Then the step should fail due to locator issue
 
   @bad_name
@@ -60,7 +60,7 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @good_id
   Scenario: Valid ID locator
-    When I try to locate by "id" with value "site-navigation"
+    When I try to locate by "id" with value "menu-main-menu"
     Then the element should be found successfully
 
   @good_classname
