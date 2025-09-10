@@ -2,7 +2,7 @@ package com.example.steps;
 
 import com.example.hooks.Hooks;
 import com.example.pages.HomePage;
-import com.rtc.client.RtcIntegration;
+import com.example.config.RtcConfig;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,12 +18,10 @@ import java.time.Duration;
 public class LocatorSteps {
 
     private final WebDriver driver = Hooks.getDriver();
-    private HomePage home;
 
     @Given("I open the RTCtek homepage")
     public void i_open_the_rtctek_homepage() {
-        home = new HomePage(driver);
-        home.openHome();
+        driver.get("https://rtctek.com/");
     }
 
     @When("I try to locate by {string} with value {string}")
@@ -32,7 +30,7 @@ public class LocatorSteps {
             By locator = getLocator(type, value);
             
             // Use RTC integration for automatic healing
-            WebElement element = RtcIntegration.findElement(locator);
+            WebElement element = RtcConfig.findElement(locator);
             
             System.out.println("✅ Successfully located: " + type + " = " + value);
             System.out.println("🔧 Element found: " + element.getTagName());
@@ -50,7 +48,7 @@ public class LocatorSteps {
             By locator = getLocator(type, value);
             
             // Use RTC integration for automatic healing
-            WebElement element = RtcIntegration.findElement(locator);
+            WebElement element = RtcConfig.findElement(locator);
             
             System.out.println("✅ Successfully located with RTC healing: " + type + " = " + value);
             System.out.println("🔧 Element found: " + element.getTagName());

@@ -15,6 +15,8 @@ public class HomePage extends BasePage {
     }
 
     public WebElement find(String type, String value) {
-        return by(type, value);
+        // This method is no longer needed with RtcConfig approach
+        // Use RtcConfig.findElement() directly in step definitions
+        return null;
     }
 }
