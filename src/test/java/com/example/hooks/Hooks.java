@@ -4,9 +4,8 @@ package com.example.hooks;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import com.rtc.client.RtcWebDriver;
+import com.rtc.client.RtcWebDriverFactory;
 
 public class Hooks {
 
@@ -25,9 +24,8 @@ public class Hooks {
             options.addArguments("--window-size=1366,768");
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
-            // Create ChromeDriver and wrap it with RtcWebDriver for automatic healing
-            WebDriver chromeDriver = new ChromeDriver(options);
-            driver = new RtcWebDriver(chromeDriver);
+            // Create ChromeDriver with automatic RTC healing using factory
+            driver = RtcWebDriverFactory.createChromeDriver(options);
             driverInitialized = true;
         }
     }

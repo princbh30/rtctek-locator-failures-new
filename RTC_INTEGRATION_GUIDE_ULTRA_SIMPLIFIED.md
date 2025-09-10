@@ -41,7 +41,7 @@ rtc.logging.healing=true
 ```
 
 ### Step 3: Update Hooks.java
-Replace your WebDriver initialization with RtcWebDriver:
+Replace your WebDriver initialization with RtcWebDriverFactory:
 
 ```java
 package com.example.hooks;
@@ -49,9 +49,8 @@ package com.example.hooks;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import com.rtc.client.RtcWebDriver; // Add this import
+import com.rtc.client.RtcWebDriverFactory; // Add this import
 
 public class Hooks {
     private static WebDriver driver;
@@ -63,9 +62,8 @@ public class Hooks {
             ChromeOptions options = new ChromeOptions();
             // ... your existing Chrome options ...
             
-            // Create ChromeDriver and wrap it with RtcWebDriver for automatic healing
-            WebDriver chromeDriver = new ChromeDriver(options);
-            driver = new RtcWebDriver(chromeDriver); // This is the only change!
+            // Create ChromeDriver with automatic RTC healing using factory
+            driver = RtcWebDriverFactory.createChromeDriver(options); // This is the only change!
             driverInitialized = true;
         }
     }
@@ -149,9 +147,19 @@ your-project/
 ├── src/test/resources/
 │   └── rtc-config.properties         # RTC configuration
 ├── src/test/java/com/example/hooks/
-│   └── Hooks.java                     # Modified to use RtcWebDriver
+│   └── Hooks.java                     # Modified to use RtcWebDriverFactory
+├── src/test/java/com/example/steps/
+│   └── LocatorSteps.java             # Uses driver.findElement() directly
 └── pom.xml                           # Updated with RTC dependency
 ```
+
+## What Was Cleaned Up
+
+- ✅ **Removed unused imports** - `ChromeDriver` import removed from Hooks.java
+- ✅ **Removed unused classes** - `BasePage.java` and `HomePage.java` deleted (not used)
+- ✅ **Removed unused directories** - `pages/` directory removed
+- ✅ **Simplified code** - Direct `driver.get()` calls instead of page objects
+- ✅ **Improved error handling** - Better AI response validation
 
 ## What Changed
 
@@ -170,6 +178,31 @@ try {
 ```java
 // Automatic healing - no code changes needed!
 element = driver.findElement(locator);
+```
+
+## Available WebDriver Factory Methods
+
+The `RtcWebDriverFactory` provides methods for all major browsers:
+
+```java
+// Chrome
+WebDriver driver = RtcWebDriverFactory.createChromeDriver(options);
+WebDriver driver = RtcWebDriverFactory.createChromeDriver(); // default options
+
+// Firefox
+WebDriver driver = RtcWebDriverFactory.createFirefoxDriver(options);
+WebDriver driver = RtcWebDriverFactory.createFirefoxDriver(); // default options
+
+// Edge
+WebDriver driver = RtcWebDriverFactory.createEdgeDriver(options);
+WebDriver driver = RtcWebDriverFactory.createEdgeDriver(); // default options
+
+// Safari
+WebDriver driver = RtcWebDriverFactory.createSafariDriver(options);
+WebDriver driver = RtcWebDriverFactory.createSafariDriver(); // default options
+
+// Custom WebDriver wrapping
+WebDriver driver = RtcWebDriverFactory.wrapWebDriver(yourCustomDriver);
 ```
 
 ## Support

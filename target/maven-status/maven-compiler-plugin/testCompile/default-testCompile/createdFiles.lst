@@ -1,5 +1,3 @@
 com\example\steps\LocatorSteps.class
-com\example\pages\BasePage.class
 com\example\hooks\Hooks.class
 com\example\runner\CucumberTest.class
-com\example\pages\HomePage.class
