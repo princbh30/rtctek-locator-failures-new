@@ -31,17 +31,36 @@ Create `src/test/resources/rtc-config.properties`:
 
 ```properties
 # RTC Smart Driver Configuration
+# ================================
+
+# RTC API Configuration
 rtc.api.url=http://localhost:8080/api/rtc
 rtc.api.key=your-api-key-here
+
+# Browser Configuration
+rtc.browser.type=chrome
+rtc.browser.headless=true
+rtc.browser.window.size=1366,768
+rtc.browser.grid.enabled=false
+rtc.browser.grid.url=http://localhost:4444/wd/hub
+
+# Healing Configuration
 rtc.healing.enabled=true
-rtc.healing.timeout=30
-rtc.healing.retry.count=1
+rtc.healing.timeout=60
+rtc.healing.retry.count=2
+
+# Logging Configuration
 rtc.logging.level=INFO
 rtc.logging.healing=true
+
+# Advanced Configuration (Optional)
+rtc.healing.strategies=all
+rtc.healing.cross.strategy=true
+rtc.healing.ai.enabled=true
 ```
 
 ### Step 3: Update Hooks.java
-Replace your WebDriver initialization with RtcWebDriverFactory:
+Replace your WebDriver initialization with RtcConfig:
 
 ```java
 package com.example.hooks;
@@ -49,8 +68,7 @@ package com.example.hooks;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import com.rtc.client.RtcWebDriverFactory; // Add this import
+import com.rtc.client.RtcConfig; // Add this import
 
 public class Hooks {
     private static WebDriver driver;
@@ -59,11 +77,8 @@ public class Hooks {
     @Before
     public void setUp() {
         if (!driverInitialized) {
-            ChromeOptions options = new ChromeOptions();
-            // ... your existing Chrome options ...
-            
-            // Create ChromeDriver with automatic RTC healing using factory
-            driver = RtcWebDriverFactory.createChromeDriver(options); // This is the only change!
+            // Create WebDriver with automatic RTC healing based on configuration
+            driver = RtcConfig.createWebDriver(); // This is the only change!
             driverInitialized = true;
         }
     }
@@ -113,6 +128,61 @@ With this integration, all 15 test scenarios pass:
 | `rtc.healing.retry.count` | Number of retry attempts | `1` |
 | `rtc.logging.level` | Logging level | `INFO` |
 | `rtc.logging.healing` | Log healing attempts | `true` |
+
+## Browser Configuration
+
+### Supported Browsers
+- **chrome** (default)
+- **firefox** / **mozilla**
+- **edge**
+- **safari**
+
+### Browser Configuration Properties
+
+| Property | Description | Default | Example |
+|----------|-------------|---------|---------|
+| `rtc.browser.type` | Browser type to use | `chrome` | `firefox`, `edge`, `safari` |
+| `rtc.browser.headless` | Run in headless mode | `true` | `false` |
+| `rtc.browser.window.size` | Browser window size | `1366,768` | `1920,1080` |
+| `rtc.browser.grid.enabled` | Enable Selenium Grid | `false` | `true` |
+| `rtc.browser.grid.url` | Grid hub URL | `http://localhost:4444/wd/hub` | `http://grid:4444/wd/hub` |
+
+### Configuration Examples
+
+#### Chrome (Default)
+```properties
+rtc.browser.type=chrome
+rtc.browser.headless=true
+rtc.browser.window.size=1366,768
+```
+
+#### Firefox
+```properties
+rtc.browser.type=firefox
+rtc.browser.headless=true
+rtc.browser.window.size=1920,1080
+```
+
+#### Edge
+```properties
+rtc.browser.type=edge
+rtc.browser.headless=true
+rtc.browser.window.size=1366,768
+```
+
+#### Safari
+```properties
+rtc.browser.type=safari
+rtc.browser.headless=false
+rtc.browser.window.size=1366,768
+```
+
+#### Selenium Grid
+```properties
+rtc.browser.grid.enabled=true
+rtc.browser.grid.url=http://your-grid-hub:4444/wd/hub
+rtc.browser.type=chrome
+```
 
 ## Troubleshooting
 

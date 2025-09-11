@@ -10,6 +10,7 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_id
   Scenario: Broken ID locator
+    Given I open the RTCtek homepage
     When I try to locate by "id" with value "menu-main-men"
     Then the step should fail due to locator issue
 
@@ -20,7 +21,8 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_classname
   Scenario: Broken CLASSNAME locator
-    When I try to locate by "className" with value "elementor-heading-ti"
+    Given I open the RTCtek homepage
+    When I try to locate by "className" with value "elementor-heading-tit"
     Then the step should fail due to locator issue
 
   @bad_css_1
