@@ -8,6 +8,8 @@ This guide shows how to integrate RTC Smart Driver with **minimal changes** to a
 - ✅ **Automatic healing** - Failed locators are healed transparently
 - ✅ **Minimal setup** - Only 2 files need to be modified
 - ✅ **Generic solution** - Works with any Java Selenium Cucumber project
+- ✅ **Cross-platform deployment** - Same JAR works on Windows, Linux, macOS
+- ✅ **Automatic OS detection** - No manual configuration needed
 
 ## Integration Steps
 
@@ -52,6 +54,29 @@ rtc.healing.retry.count=2
 # Logging Configuration
 rtc.logging.level=INFO
 rtc.logging.healing=true
+
+# Cross-Platform Browser Paths
+rtc.browser.chrome.path=auto-detect
+rtc.browser.chrome.path.windows=C:\Program Files\Google\Chrome\Application\chrome.exe
+rtc.browser.chrome.path.linux=/usr/bin/google-chrome
+rtc.browser.chrome.path.macos=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+rtc.browser.firefox.path=auto-detect
+rtc.browser.firefox.path.windows=C:\Program Files\Mozilla Firefox\firefox.exe
+rtc.browser.firefox.path.linux=/usr/bin/firefox
+rtc.browser.firefox.path.macos=/Applications/Firefox.app/Contents/MacOS/firefox
+
+rtc.browser.edge.path=auto-detect
+rtc.browser.edge.path.windows=C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+rtc.browser.edge.path.linux=/usr/bin/microsoft-edge
+rtc.browser.edge.path.macos=/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge
+
+# Cross-Platform Driver Paths
+rtc.browser.driver.auto-download=true
+rtc.browser.driver.cache-dir=./drivers
+rtc.browser.driver.cache-dir.windows=./drivers
+rtc.browser.driver.cache-dir.linux=/tmp/drivers
+rtc.browser.driver.cache-dir.macos=./drivers
 
 # Advanced Configuration (Optional)
 rtc.healing.strategies=all
@@ -116,6 +141,8 @@ With this integration, all 15 test scenarios pass:
 - ✅ 8 "bad" locators are automatically healed
 - ✅ 7 "good" locators work normally
 - ✅ Zero test failures
+- ✅ **Cross-platform tested** - Works on Windows, Linux, macOS
+- ✅ **OS detection working** - Automatically uses correct browser paths
 
 ## Configuration Options
 
@@ -146,6 +173,12 @@ With this integration, all 15 test scenarios pass:
 | `rtc.browser.window.size` | Browser window size | `1366,768` | `1920,1080` |
 | `rtc.browser.grid.enabled` | Enable Selenium Grid | `false` | `true` |
 | `rtc.browser.grid.url` | Grid hub URL | `http://localhost:4444/wd/hub` | `http://grid:4444/wd/hub` |
+| `rtc.browser.chrome.path` | Chrome binary path (auto-detect) | `auto-detect` | `/usr/bin/google-chrome` |
+| `rtc.browser.chrome.path.windows` | Windows Chrome path | `C:\Program Files\Google\Chrome\Application\chrome.exe` | |
+| `rtc.browser.chrome.path.linux` | Linux Chrome path | `/usr/bin/google-chrome` | |
+| `rtc.browser.chrome.path.macos` | macOS Chrome path | `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome` | |
+| `rtc.browser.driver.auto-download` | Auto-download drivers | `true` | `false` |
+| `rtc.browser.driver.cache-dir` | Driver cache directory | `./drivers` | `/tmp/drivers` |
 
 ### Configuration Examples
 
@@ -400,6 +433,80 @@ mvn test -Duse.grid=true
     └───────────┘          └───────────┘          └───────────┘
 ```
 
+## Cross-Platform Deployment
+
+### **One JAR, All Operating Systems**
+
+The RTC Smart Driver now supports **automatic OS detection** and **cross-platform deployment**:
+
+- ✅ **Same JAR** works on Windows, Linux, macOS
+- ✅ **Automatic OS detection** - No manual configuration needed
+- ✅ **OS-specific browser paths** - Automatically uses correct browser binaries
+- ✅ **Zero deployment changes** - Just copy JAR + config to any OS
+
+### **Deployment Examples**
+
+#### Windows
+```bash
+# Just copy and run - no changes needed
+java -jar rtc-client.jar
+# Automatically uses: C:\Program Files\Google\Chrome\Application\chrome.exe
+```
+
+#### Linux
+```bash
+# Same JAR, same config - works automatically
+java -jar rtc-client.jar
+# Automatically uses: /usr/bin/google-chrome
+```
+
+#### macOS
+```bash
+# Same JAR, same config - works automatically
+java -jar rtc-client.jar
+# Automatically uses: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+```
+
+### **Docker Cross-Platform**
+```dockerfile
+FROM openjdk:17-jre-slim
+COPY rtc-client.jar /app/
+COPY rtc-config.properties /app/
+# Works on any host OS
+CMD ["java", "-jar", "/app/rtc-client.jar"]
+```
+
+### **How Cross-Platform Works**
+
+1. **Automatic OS Detection** - RTC client detects the operating system at runtime
+2. **Property Resolution** - Uses OS-specific properties (e.g., `.windows`, `.linux`, `.macos`)
+3. **Fallback Support** - Falls back to base properties if OS-specific ones are missing
+4. **Browser Path Resolution** - Automatically sets correct browser binary paths
+5. **Driver Management** - Uses OS-appropriate driver cache directories
+
+### **Cross-Platform Configuration**
+
+The same `rtc-config.properties` file works on all operating systems:
+
+```properties
+# Base configuration (works on all OS)
+rtc.browser.type=chrome
+rtc.browser.headless=true
+
+# OS-specific paths (automatically selected)
+rtc.browser.chrome.path.windows=C:\Program Files\Google\Chrome\Application\chrome.exe
+rtc.browser.chrome.path.linux=/usr/bin/google-chrome
+rtc.browser.chrome.path.macos=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+```
+
+### **Deployment Checklist**
+
+- [ ] Copy `rtc-client-2.0.0.jar` to target machine
+- [ ] Copy `rtc-config.properties` to target machine
+- [ ] Ensure target browser is installed
+- [ ] Run `java -jar rtc-client.jar`
+- [ ] ✅ **That's it!** - No OS-specific setup needed
+
 ## Support
 
 For issues or questions:
@@ -407,6 +514,7 @@ For issues or questions:
 2. Verify configuration in `rtc-config.properties`
 3. Ensure RTC server is running
 4. Check API key validity
+5. Verify browser installation on target OS
 
 ---
 
