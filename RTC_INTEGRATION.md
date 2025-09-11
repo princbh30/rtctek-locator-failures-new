@@ -361,42 +361,89 @@ WebDriver driver = RtcWebDriverFactory.wrapWebDriver(yourCustomDriver);
 3. **Healing logic** runs on the client side, not the Grid node
 4. **No Grid configuration changes** needed
 
-### **Grid Integration Example**
+### **Docker Compose Setup (Recommended)**
 
-```java
-// In your Hooks.java - switch between local and Grid easily
-@Before
-public void setUp() {
-    if (!driverInitialized) {
-        String useGrid = System.getProperty("use.grid", "false");
-        
-        if ("true".equals(useGrid)) {
-            // Use Selenium Grid
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless=new");
-            driver = RtcWebDriverFactory.createChromeGridDriver(
-                "http://grid-hub:4444/wd/hub", 
-                options
-            );
-        } else {
-            // Use local driver
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless=new");
-            driver = RtcWebDriverFactory.createChromeDriver(options);
-        }
-        driverInitialized = true;
-    }
-}
+For easy Grid deployment, use the included `docker-compose.yml`:
+
+```yaml
+version: '3.8'
+services:
+  selenium-hub:
+    image: selenium/hub:4.15.0
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+    environment:
+      - GRID_MAX_SESSION=16
+      - GRID_BROWSER_TIMEOUT=300
+      - GRID_SESSION_TIMEOUT=300
+
+  chrome-node:
+    image: selenium/node-chrome:4.15.0
+    container_name: chrome-node
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - NODE_MAX_INSTANCES=2
+      - NODE_MAX_SESSION=2
+      - NODE_OVERRIDE_MAX_SESSIONS=true
+      - NODE_SESSION_TIMEOUT=300
+      - NODE_BROWSER_TIMEOUT=300
+
+  edge-node:
+    image: selenium/node-edge:4.15.0
+    container_name: edge-node
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - NODE_MAX_INSTANCES=2
+      - NODE_MAX_SESSION=2
+      - NODE_OVERRIDE_MAX_SESSIONS=true
+      - NODE_SESSION_TIMEOUT=300
+      - NODE_BROWSER_TIMEOUT=300
 ```
 
-### **Running Tests on Grid**
+### **Grid Management Commands**
 
 ```bash
-# Local execution
-mvn test
+# Start Grid
+docker-compose up -d
 
-# Grid execution
-mvn test -Duse.grid=true
+# Stop Grid
+docker-compose down
+
+# View logs
+docker-compose logs
+
+# Scale chrome nodes
+docker-compose up -d --scale chrome-node=3
+
+# Check status
+docker-compose ps
+```
+
+### **Grid Configuration**
+
+Update your `rtc-config.properties` to use Grid:
+
+```properties
+# Enable Grid mode
+rtc.browser.grid.enabled=true
+rtc.browser.grid.url=http://localhost:4444/wd/hub
+rtc.browser.type=chrome
+rtc.browser.headless=false
 ```
 
 ### **Grid Benefits with RTC**
@@ -406,6 +453,7 @@ mvn test -Duse.grid=true
 - ✅ **No Grid changes** - RTC API calls happen from client machines
 - ✅ **Cross-browser healing** - Different browsers on different nodes
 - ✅ **Parallel execution** - Multiple tests healing simultaneously
+- ✅ **Production ready** - Optimized resource allocation and stability
 
 ### **Grid Architecture**
 

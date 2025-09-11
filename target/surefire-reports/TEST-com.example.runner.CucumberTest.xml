@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.runner.CucumberTest" time="132.39" tests="15" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.runner.CucumberTest" time="57.641" tests="15" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\mayank\AppData\Local\Temp\surefire17743001874712680266\surefirebooter-20250911165200178_3.jar C:\Users\mayank\AppData\Local\Temp\surefire17743001874712680266 2025-09-11T16-51-59_696-jvmRun1 surefire-20250911165200178_1tmp surefire_0-20250911165200178_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\mayank\AppData\Local\Temp\surefire5595519487478740696\surefirebooter-20250911203604028_3.jar C:\Users\mayank\AppData\Local\Temp\surefire5595519487478740696 2025-09-11T20-36-03_685-jvmRun1 surefire-20250911203604028_1tmp surefire_0-20250911203604028_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\target\test-classes;C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\target\classes;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-java\4.21.0\selenium-java-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-api\4.21.0\selenium-api-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.21.0\selenium-chrome-driver-4.21.0.jar;C:\Users\mayank\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.21.0\selenium-chromium-driver-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-json\4.21.0\selenium-json-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.21.0\selenium-manager-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.21.0\selenium-devtools-v123-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.21.0\selenium-devtools-v124-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v125\4.21.0\selenium-devtools-v125-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.21.0\selenium-devtools-v85-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.21.0\selenium-edge-driver-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.21.0\selenium-firefox-driver-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-http\4.21.0\selenium-http-4.21.0.jar;C:\Users\mayank\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.21.0\selenium-ie-driver-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.21.0\selenium-remote-driver-4.21.0.jar;C:\Users\mayank\.m2\repository\com\google\guava\guava\33.2.0-jre\guava-33.2.0-jre.jar;C:\Users\mayank\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\mayank\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\mayank\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\mayank\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\mayank\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\mayank\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-api\1.38.0\opentelemetry-api-1.38.0.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-context\1.38.0\opentelemetry-context-1.38.0.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.38.0\opentelemetry-exporter-logging-1.38.0.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.38.0\opentelemetry-sdk-common-1.38.0.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.38.0\opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.38.0\opentelemetry-sdk-extension-autoconfigure-1.38.0.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.38.0-alpha\opentelemetry-api-incubator-1.38.0-alpha.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.38.0\opentelemetry-sdk-trace-1.38.0.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.38.0\opentelemetry-sdk-1.38.0.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.38.0\opentelemetry-sdk-metrics-1.38.0.jar;C:\Users\mayank\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.38.0\opentelemetry-sdk-logs-1.38.0.jar;C:\Users\mayank\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-os\4.21.0\selenium-os-4.21.0.jar;C:\Users\mayank\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.21.0\selenium-safari-driver-4.21.0.jar;C:\Users\mayank\.m2\repository\org\seleniumhq\selenium\selenium-support\4.21.0\selenium-support-4.21.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\cucumber-java\7.14.0\cucumber-java-7.14.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\cucumber-core\7.14.0\cucumber-core-7.14.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\cucumber-gherkin\7.14.0\cucumber-gherkin-7.14.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.14.0\cucumber-gherkin-messages-7.14.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\tag-expressions\5.0.6\tag-expressions-5.0.6.jar;C:\Users\mayank\.m2\repository\io\cucumber\cucumber-expressions\16.1.2\cucumber-expressions-16.1.2.jar;C:\Users\mayank\.m2\repository\io\cucumber\datatable\7.14.0\datatable-7.14.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\cucumber-plugin\7.14.0\cucumber-plugin-7.14.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\docstring\7.14.0\docstring-7.14.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\mayank\.m2\repository\io\cucumber\ci-environment\9.2.0\ci-environment-9.2.0.jar;C:\Users\mayank\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\mayank\.m2\repository\io\cucumber\cucumber-junit\7.14.0\cucumber-junit-7.14.0.jar;C:\Users\mayank\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\mayank\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\mayank\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\mayank\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\mayank\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\lib\rtc-client-2.0.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\mayank\AppData\Local\Temp\surefire17743001874712680266\surefirebooter-20250911165200178_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\mayank\AppData\Local\Temp\surefire5595519487478740696\surefirebooter-20250911203604028_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
@@ -50,43 +50,49 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Java\jdk-17\bin;C:\Users\mayank\Downloads\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin;C:\Users\mayank\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\mayank\AppData\Local\Programs\Python\Python313\;C:\Users\mayank\AppData\Local\Microsoft\WindowsApps;C:\Users\mayank\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\mayank\AppData\Roaming\npm;C:\Users\mayank\AppData\Local\Programs\Git\cmd;C:\Users\mayank\AppData\Local\GitHubDesktop\bin;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Java\jdk-17\bin;C:\Users\mayank\Downloads\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\mayank\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\mayank\AppData\Local\Programs\Python\Python313\;C:\Users\mayank\AppData\Local\Microsoft\WindowsApps;C:\Users\mayank\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\mayank\AppData\Roaming\npm;C:\Users\mayank\AppData\Local\Programs\Git\cmd;C:\Users\mayank\AppData\Local\GitHubDesktop\bin;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="17.0.12+8-LTS-286"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="Broken ID locator" classname="RTCtek - Demonstrate failing locators across strategies" time="18.978">
+  <testcase name="Broken ID locator" classname="RTCtek - Demonstrate failing locators across strategies" time="6.917">
     <system-out><![CDATA[
 @rtctek @bad_id
 Scenario: Broken ID locator                               # src/test/resources/features/rtctek_locators.feature:12
 ✅ RTC configuration loaded successfully
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 ✅ RTC Smart Driver HTTP integration initialized
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                        # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
   Given I open the RTCtek homepage                        # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 🔧 Locator failed, attempting RTC healing: By.id: menu-main-men
-✅ Locator healed: By.id: menu-main-men → linktext:Services
-✅ Successfully located: id = menu-main-men
-🔧 Element found: a
   When I try to locate by "id" with value "menu-main-men" # com.example.steps.LocatorSteps.i_try_to_locate_by_with_value(java.lang.String,java.lang.String)
-✅ Test completed - RTC healing succeeded, locator was healed
+✅ Test completed - Locator failed as expected (no healing)
   Then the step should fail due to locator issue          # com.example.steps.LocatorSteps.the_step_should_fail_due_to_locator_issue()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:52:12 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:52:12 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+    <system-err><![CDATA[Sep 11, 2025 8:36:06 PM org.openqa.selenium.remote.tracing.opentelemetry.OpenTelemetryTracer createTracer
+INFO: Using OpenTelemetry for tracing
+❌ RTC API call failed: null
+❌ Locator failed even after RTC healing: id = menu-main-men
+❌ Error: no such element: Unable to locate element: {"method":"css selector","selector":"#menu\-main\-men"}
+  (Session info: chrome=119.0.6045.199)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [28448711740f4b75a4b15e07f89045dd, findElement {value=menu-main-men, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36279}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.19.0.3:4444/sessio..., se:cdpVersion: 119.0.6045.199, se:vnc: ws://172.19.0.3:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.19.0.3:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 28448711740f4b75a4b15e07f89045dd
 ]]></system-err>
   </testcase>
-  <testcase name="Broken NAME locator" classname="RTCtek - Demonstrate failing locators across strategies" time="6.438">
+  <testcase name="Broken NAME locator" classname="RTCtek - Demonstrate failing locators across strategies" time="3.762">
     <system-out><![CDATA[
 @rtctek @bad_name
 Scenario: Broken NAME locator                    # src/test/resources/features/rtctek_locators.feature:18
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage               # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 ✅ Successfully located: name = s
@@ -96,40 +102,39 @@ Scenario: Broken NAME locator                    # src/test/resources/features/r
   Then the step should fail due to locator issue # com.example.steps.LocatorSteps.the_step_should_fail_due_to_locator_issue()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:52:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:52:26 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="Broken CLASSNAME locator" classname="RTCtek - Demonstrate failing locators across strategies" time="13.424">
+  <testcase name="Broken CLASSNAME locator" classname="RTCtek - Demonstrate failing locators across strategies" time="3.709">
     <system-out><![CDATA[
 @rtctek @bad_classname
 Scenario: Broken CLASSNAME locator                                       # src/test/resources/features/rtctek_locators.feature:23
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                                       # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
   Given I open the RTCtek homepage                                       # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 🔧 Locator failed, attempting RTC healing: By.className: elementor-heading-tit
-✅ Locator healed: By.className: elementor-heading-tit → .elementor-heading-title
-✅ Successfully located: className = elementor-heading-tit
-🔧 Element found: h2
   When I try to locate by "className" with value "elementor-heading-tit" # com.example.steps.LocatorSteps.i_try_to_locate_by_with_value(java.lang.String,java.lang.String)
-✅ Test completed - RTC healing succeeded, locator was healed
+✅ Test completed - Locator failed as expected (no healing)
   Then the step should fail due to locator issue                         # com.example.steps.LocatorSteps.the_step_should_fail_due_to_locator_issue()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:52:33 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:52:33 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+    <system-err><![CDATA[❌ RTC API call failed: null
+❌ Locator failed even after RTC healing: className = elementor-heading-tit
+❌ Error: no such element: Unable to locate element: {"method":"css selector","selector":".elementor\-heading\-tit"}
+  (Session info: chrome=119.0.6045.199)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [825d4c826344b2ec1ef6ab3fcf497944, findElement {value=elementor-heading-tit, using=class name}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37245}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.19.0.3:4444/sessio..., se:cdpVersion: 119.0.6045.199, se:vnc: ws://172.19.0.3:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.19.0.3:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 825d4c826344b2ec1ef6ab3fcf497944
 ]]></system-err>
   </testcase>
-  <testcase name="Broken CSS locator - attribute" classname="RTCtek - Demonstrate failing locators across strategies" time="6.428">
+  <testcase name="Broken CSS locator - attribute" classname="RTCtek - Demonstrate failing locators across strategies" time="2.693">
     <system-out><![CDATA[
 @rtctek @bad_css_1
 Scenario: Broken CSS locator - attribute                         # src/test/resources/features/rtctek_locators.feature:29
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                               # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 ✅ Successfully located: css = a[href*='linkedin']
@@ -139,17 +144,12 @@ Scenario: Broken CSS locator - attribute                         # src/test/reso
   Then the step should fail due to locator issue                 # com.example.steps.LocatorSteps.the_step_should_fail_due_to_locator_issue()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:52:45 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:52:45 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="Broken CSS locator - nth-child" classname="RTCtek - Demonstrate failing locators across strategies" time="6.002">
+  <testcase name="Broken CSS locator - nth-child" classname="RTCtek - Demonstrate failing locators across strategies" time="3.543">
     <system-out><![CDATA[
 @rtctek @bad_css_2
 Scenario: Broken CSS locator - nth-child                                         # src/test/resources/features/rtctek_locators.feature:34
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                                               # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 ✅ Successfully located: css = ul#menu-main-menu li:nth-child(2) a
@@ -159,39 +159,38 @@ Scenario: Broken CSS locator - nth-child                                        
   Then the step should fail due to locator issue                                 # com.example.steps.LocatorSteps.the_step_should_fail_due_to_locator_issue()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:52:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:52:51 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="Broken XPATH - wrong id" classname="RTCtek - Demonstrate failing locators across strategies" time="11.966">
+  <testcase name="Broken XPATH - wrong id" classname="RTCtek - Demonstrate failing locators across strategies" time="3.683">
     <system-out><![CDATA[
 @rtctek @bad_xpath_1
 Scenario: Broken XPATH - wrong id                                          # src/test/resources/features/rtctek_locators.feature:39
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                                         # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 🔧 Locator failed, attempting RTC healing: By.xpath: //*[@id='menu-item-4711']/a
-✅ Locator healed: By.xpath: //*[@id='menu-item-4711']/a → `xpath://a[text()='Services']`
-✅ Successfully located: xpath = //*[@id='menu-item-4711']/a
-🔧 Element found: a
   When I try to locate by "xpath" with value "//*[@id='menu-item-4711']/a" # com.example.steps.LocatorSteps.i_try_to_locate_by_with_value(java.lang.String,java.lang.String)
-✅ Test completed - RTC healing succeeded, locator was healed
+✅ Test completed - Locator failed as expected (no healing)
   Then the step should fail due to locator issue                           # com.example.steps.LocatorSteps.the_step_should_fail_due_to_locator_issue()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:52:57 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:52:57 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+    <system-err><![CDATA[❌ RTC API call failed: null
+❌ Locator failed even after RTC healing: xpath = //*[@id='menu-item-4711']/a
+❌ Error: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='menu-item-4711']/a"}
+  (Session info: chrome=119.0.6045.199)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [f7a16854e74fc57168d43dc711d09103, findElement {value=//*[@id='menu-item-4711']/a, using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40349}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.19.0.3:4444/sessio..., se:cdpVersion: 119.0.6045.199, se:vnc: ws://172.19.0.3:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.19.0.3:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f7a16854e74fc57168d43dc711d09103
 ]]></system-err>
   </testcase>
-  <testcase name="Broken XPATH - brittle index" classname="RTCtek - Demonstrate failing locators across strategies" time="6.644">
+  <testcase name="Broken XPATH - brittle index" classname="RTCtek - Demonstrate failing locators across strategies" time="3.559">
     <system-out><![CDATA[
 @rtctek @bad_xpath_2
 Scenario: Broken XPATH - brittle index                                                  # src/test/resources/features/rtctek_locators.feature:44
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                                                      # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 ✅ Successfully located: xpath = (//a[contains(@href,'linkedin.com')])[1]
@@ -201,40 +200,39 @@ Scenario: Broken XPATH - brittle index                                          
   Then the step should fail due to locator issue                                        # com.example.steps.LocatorSteps.the_step_should_fail_due_to_locator_issue()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:53:10 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:53:10 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="Broken LINKTEXT locator" classname="RTCtek - Demonstrate failing locators across strategies" time="15.352">
+  <testcase name="Broken LINKTEXT locator" classname="RTCtek - Demonstrate failing locators across strategies" time="4.4">
     <system-out><![CDATA[
 @rtctek @bad_linktext
 Scenario: Broken LINKTEXT locator                        # src/test/resources/features/rtctek_locators.feature:49
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                       # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
   Given I open the RTCtek homepage                       # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 🔧 Locator failed, attempting RTC healing: By.linkText: Contac
-✅ Locator healed: By.linkText: Contac → //a[contains(text(),'Contac')]
-✅ Successfully located: linkText = Contac
-🔧 Element found: a
   When I try to locate by "linkText" with value "Contac" # com.example.steps.LocatorSteps.i_try_to_locate_by_with_value(java.lang.String,java.lang.String)
-✅ Test completed - RTC healing succeeded, locator was healed
+✅ Test completed - Locator failed as expected (no healing)
   Then the step should fail due to locator issue         # com.example.steps.LocatorSteps.the_step_should_fail_due_to_locator_issue()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:53:15 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:53:15 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+    <system-err><![CDATA[❌ RTC API call failed: null
+❌ Locator failed even after RTC healing: linkText = Contac
+❌ Error: no such element: Unable to locate element: {"method":"link text","selector":"Contac"}
+  (Session info: chrome=119.0.6045.199)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [9e554750261363fc6c92dcecccb461e6, findElement {value=Contac, using=link text}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34083}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.19.0.3:4444/sessio..., se:cdpVersion: 119.0.6045.199, se:vnc: ws://172.19.0.3:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.19.0.3:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9e554750261363fc6c92dcecccb461e6
 ]]></system-err>
   </testcase>
-  <testcase name="Broken PARTIALLINKTEXT locator" classname="RTCtek - Demonstrate failing locators across strategies" time="5.771">
+  <testcase name="Broken PARTIALLINKTEXT locator" classname="RTCtek - Demonstrate failing locators across strategies" time="3.64">
     <system-out><![CDATA[
 @rtctek @bad_partiallinktext
 Scenario: Broken PARTIALLINKTEXT locator                         # src/test/resources/features/rtctek_locators.feature:55
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                               # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 ✅ Successfully located: partialLinkText = Contact
@@ -244,17 +242,12 @@ Scenario: Broken PARTIALLINKTEXT locator                         # src/test/reso
   Then the step should fail due to locator issue                 # com.example.steps.LocatorSteps.the_step_should_fail_due_to_locator_issue()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:53:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:53:31 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="Broken TAGNAME locator" classname="RTCtek - Demonstrate failing locators across strategies" time="5.928">
+  <testcase name="Broken TAGNAME locator" classname="RTCtek - Demonstrate failing locators across strategies" time="3.635">
     <system-out><![CDATA[
 @rtctek @bad_tagname
 Scenario: Broken TAGNAME locator                        # src/test/resources/features/rtctek_locators.feature:60
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                      # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 ✅ Successfully located: tagName = header
@@ -264,17 +257,12 @@ Scenario: Broken TAGNAME locator                        # src/test/resources/fea
   Then the step should fail due to locator issue        # com.example.steps.LocatorSteps.the_step_should_fail_due_to_locator_issue()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:53:37 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:53:37 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="Valid ID locator" classname="RTCtek - Demonstrate failing locators across strategies" time="7.919">
+  <testcase name="Valid ID locator" classname="RTCtek - Demonstrate failing locators across strategies" time="3.445">
     <system-out><![CDATA[
 @rtctek @good_id
 Scenario: Valid ID locator                                 # src/test/resources/features/rtctek_locators.feature:65
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                         # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 ✅ Successfully located: id = menu-main-menu
@@ -283,17 +271,12 @@ Scenario: Valid ID locator                                 # src/test/resources/
   Then the element should be found successfully            # com.example.steps.LocatorSteps.the_element_should_be_found_successfully()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:53:45 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:53:45 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="Valid CLASSNAME locator" classname="RTCtek - Demonstrate failing locators across strategies" time="5.842">
+  <testcase name="Valid CLASSNAME locator" classname="RTCtek - Demonstrate failing locators across strategies" time="2.536">
     <system-out><![CDATA[
 @rtctek @good_classname
 Scenario: Valid CLASSNAME locator                                          # src/test/resources/features/rtctek_locators.feature:70
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                                         # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 ✅ Successfully located: className = elementor-heading-title
@@ -302,17 +285,12 @@ Scenario: Valid CLASSNAME locator                                          # src
   Then the element should be found successfully                            # com.example.steps.LocatorSteps.the_element_should_be_found_successfully()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:53:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:53:51 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="Valid CSS locator" classname="RTCtek - Demonstrate failing locators across strategies" time="7.05">
+  <testcase name="Valid CSS locator" classname="RTCtek - Demonstrate failing locators across strategies" time="4.421">
     <system-out><![CDATA[
 @rtctek @good_css
 Scenario: Valid CSS locator                                      # src/test/resources/features/rtctek_locators.feature:75
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                               # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
   Given I open the RTCtek homepage                               # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
@@ -322,17 +300,12 @@ Scenario: Valid CSS locator                                      # src/test/reso
   Then the element should be found successfully                  # com.example.steps.LocatorSteps.the_element_should_be_found_successfully()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:53:56 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:53:56 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="Valid XPATH locator" classname="RTCtek - Demonstrate failing locators across strategies" time="8.022">
+  <testcase name="Valid XPATH locator" classname="RTCtek - Demonstrate failing locators across strategies" time="3.488">
     <system-out><![CDATA[
 @rtctek @good_xpath
 Scenario: Valid XPATH locator                                                    # src/test/resources/features/rtctek_locators.feature:81
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                                               # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 ✅ Successfully located: xpath = //h2[contains(text(),'Services')]
@@ -341,17 +314,12 @@ Scenario: Valid XPATH locator                                                   
   Then the element should be found successfully                                  # com.example.steps.LocatorSteps.the_element_should_be_found_successfully()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:54:05 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:54:05 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="Valid LINKTEXT locator" classname="RTCtek - Demonstrate failing locators across strategies" time="5.568">
+  <testcase name="Valid LINKTEXT locator" classname="RTCtek - Demonstrate failing locators across strategies" time="3.523">
     <system-out><![CDATA[
 @rtctek @good_linktext
 Scenario: Valid LINKTEXT locator                             # src/test/resources/features/rtctek_locators.feature:86
-🔧 Creating WebDriver - Browser: chrome, Grid: false, Headless: true
+🔧 Creating WebDriver - Browser: chrome, Grid: true, Headless: false
 🔧 RTC WebDriver wrapper initialized with automatic healing
   Given I open the RTCtek homepage                           # com.example.steps.LocatorSteps.i_open_the_rtctek_homepage()
 ✅ Successfully located: linkText = Contact Us
@@ -360,10 +328,5 @@ Scenario: Valid LINKTEXT locator                             # src/test/resource
   Then the element should be found successfully              # com.example.steps.LocatorSteps.the_element_should_be_found_successfully()
 🔧 Browser closed after test scenario
 ]]></system-out>
-    <system-err><![CDATA[Sep 11, 2025 4:54:11 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 140
-Sep 11, 2025 4:54:11 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 140.0.7339.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
 </testsuite>
