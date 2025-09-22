@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RTC Locator Healing Report</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#111}
+h1{font-size:20px;margin:0 0 8px} .meta{color:#666;margin:0 0 16px}
+table{border-collapse:collapse;width:100%;} th,td{border:1px solid #ddd;padding:8px;vertical-align:top} th{background:#f7f7f7;text-align:left} tr:nth-child(even){background:#fafafa}
+.pass{color:#0a7d13;font-weight:600}.fail{color:#b00020;font-weight:600}
+code{background:#f3f3f3;padding:2px 4px;border-radius:4px} .small{color:#777;font-size:12px}
+</style>
+</head>
+<body>
+<h1>RTC Locator Healing Report</h1>
+<div class="meta">Generated at Fri, 19 Sep 2025 19:10:47 IST (IST)</div>
+<div class="meta">Total tests: 13 &nbsp;|&nbsp; Passed: <span class="pass">10</span> &nbsp;|&nbsp; Failed: <span class="fail">3</span> &nbsp;|&nbsp; Healing triggered: 6 &nbsp;|&nbsp; Avg time: 3s 167 ms</div>
+<button id="select-all-btn" style="margin:8px 8px 8px 0; padding:6px 12px;">Select All</button>
+<button id="update-selected-btn" style="margin:8px 8px 8px 0; padding:6px 12px;">Update Selected Locators</button>
+<span id="update-selected-status" class="small"></span>
+<button id="stop-server-btn" style="margin:8px 8px 8px 0; padding:6px 12px;">Finish</button>
+<span id="stop-status" class="small"></span>
+<table>
+<thead>
+<tr>
+<th>Select</th>
+<th>Test case</th>
+<th>Original locator</th>
+<th>Original strategy</th>
+<th>Healed locator</th>
+<th>Healed strategy</th>
+<th>Was healing triggered</th>
+<th>Healing suggested?</th>
+<th>Test result</th>
+<th>Time taken</th>
+<th>Locator file (abs path)</th>
+<th class="small">Timestamp (IST)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><input type="checkbox" class="locator-checkbox" data-original-strategy="className" data-original-locator="elementor-heading-titlee" data-healed-locator="`css:.elementor-heading-title`" data-feature-file="C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\src\test\resources\features\rtctek_locators.feature" data-line-number="23" ></td>
+<td>main</td>
+<td><code>elementor-heading-titlee</code></td>
+<td>className</td>
+<td><code>`css:.elementor-heading-title`</code></td>
+<td>className</td>
+<td>Yes</td>
+<td>suggested</td>
+<td class="pass">PASS</td>
+<td>9s 450 ms</td>
+<td><code>C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\src\test\resources\features\rtctek_locators.feature:23</code></td>
+<td class="small">2025-09-19 19:09:46 IST</td>
+</tr>
+<tr>
+<td><input type="checkbox" class="locator-checkbox" data-original-strategy="xpath" data-original-locator="//a[text()=&#39;About Uss&#39;]" data-healed-locator="//a[@href=&#39;https://rtctek.com/about-us/&#39;]" data-feature-file="C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\src\test\resources\features\rtctek_locators.feature" data-line-number="38" ></td>
+<td>main</td>
+<td><code>//a[text()=&#39;About Uss&#39;]</code></td>
+<td>xpath</td>
+<td><code>//a[@href=&#39;https://rtctek.com/about-us/&#39;]</code></td>
+<td>xpath</td>
+<td>Yes</td>
+<td>suggested</td>
+<td class="pass">PASS</td>
+<td>8s 723 ms</td>
+<td><code>C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\src\test\resources\features\rtctek_locators.feature:38</code></td>
+<td class="small">2025-09-19 19:10:00 IST</td>
+</tr>
+<tr>
+<td></td>
+<td>main</td>
+<td><code>Contactt</code></td>
+<td>partialLinkText</td>
+<td><code>null</code></td>
+<td>partialLinkText</td>
+<td>Yes</td>
+<td>service_down</td>
+<td class="fail">FAIL</td>
+<td>5s 65 ms</td>
+<td><code>C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\src\test\resources\features\rtctek_locators.feature:53</code></td>
+<td class="small">2025-09-19 19:10:13 IST</td>
+</tr>
+<tr>
+<td><input type="checkbox" class="locator-checkbox" data-original-strategy="id" data-original-locator="menu-main-men" data-healed-locator="#menu-main-menu" data-feature-file="C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\src\test\resources\features\rtctek_locators.feature" data-line-number="63" ></td>
+<td>main</td>
+<td><code>menu-main-men</code></td>
+<td>id</td>
+<td><code>#menu-main-menu</code></td>
+<td>id</td>
+<td>Yes</td>
+<td>suggested</td>
+<td class="pass">PASS</td>
+<td>6s 46 ms</td>
+<td><code>C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\src\test\resources\features\rtctek_locators.feature:63</code></td>
+<td class="small">2025-09-19 19:10:22 IST</td>
+</tr>
+<tr>
+<td></td>
+<td>main</td>
+<td><code>elementor-heading-titlee</code></td>
+<td>className</td>
+<td><code>null</code></td>
+<td>className</td>
+<td>Yes</td>
+<td>service_down</td>
+<td class="fail">FAIL</td>
+<td>5s 279 ms</td>
+<td><code>C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\src\test\resources\features\rtctek_locators.feature:23</code></td>
+<td class="small">2025-09-19 19:10:30 IST</td>
+</tr>
+<tr>
+<td></td>
+<td>main</td>
+<td><code>Contact Uss</code></td>
+<td>linkText</td>
+<td><code>null</code></td>
+<td>linkText</td>
+<td>Yes</td>
+<td>service_down</td>
+<td class="fail">FAIL</td>
+<td>6s 336 ms</td>
+<td><code>C:\Users\mayank\Documents\GitHub\rtctek-locator-failures-new\src\test\resources\features\rtctek_locators.feature:83</code></td>
+<td class="small">2025-09-19 19:10:39 IST</td>
+</tr>
+</tbody>
+</table>
+<script>
+(function(){
+ const port='9099';
+ const featureRoot='';
+ 
+ // Select All / Deselect All functionality
+ const selectAllBtn = document.getElementById('select-all-btn');
+ if(selectAllBtn){
+  let allSelected = false;
+  selectAllBtn.addEventListener('click', function(){
+    const checkboxes = document.querySelectorAll('.locator-checkbox');
+    checkboxes.forEach(cb => cb.checked = !allSelected);
+    allSelected = !allSelected;
+    this.textContent = allSelected ? 'Deselect All' : 'Select All';
+  });
+ }
+ 
+ // Update Selected Locators functionality
+ const updateSelectedBtn = document.getElementById('update-selected-btn');
+ if(updateSelectedBtn){
+  updateSelectedBtn.addEventListener('click', async function(){
+    const status = document.getElementById('update-selected-status');
+    const checkedBoxes = document.querySelectorAll('.locator-checkbox:checked');
+    
+    if(checkedBoxes.length === 0){
+      status.textContent = 'No locators selected'; 
+      status.style.color = '#b00020';
+      return;
+    }
+    
+    const items = [];
+    checkedBoxes.forEach(cb => {
+      items.push({
+        originalStrategy: cb.getAttribute('data-original-strategy'),
+        originalLocator: cb.getAttribute('data-original-locator'),
+        healedLocator: cb.getAttribute('data-healed-locator'),
+        featureFile: cb.getAttribute('data-feature-file') || undefined,
+        lineNumber: cb.getAttribute('data-line-number') ? parseInt(cb.getAttribute('data-line-number'), 10) : undefined
+      });
+    });
+    
+    updateSelectedBtn.disabled = true;
+    status.textContent = 'Updating ' + items.length + ' locators...';
+    status.style.color = '';
+    
+    try{
+      const txt = await fetch('http://127.0.0.1:'+port+'/rtc-report/update-all', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({updates: items})
+      }).then(r => r.text());
+      
+      let res; let updatedCount = 0; let failedCount = 0; let parsed = false;
+      try { res = JSON.parse(txt); parsed = true; } catch(_) { res = null; }
+      if(parsed && res && typeof res.updated === 'number'){ updatedCount = res.updated; failedCount = Number(res.failed||0); }
+      if(!parsed){
+        // Fallback: try to extract counts from text, else assume all selected succeeded
+        try {
+          const m = String(txt||'').match(/"updated":(\d+).*?"failed":(\d+)/);
+          if(m){ updatedCount = parseInt(m[1],10); failedCount = parseInt(m[2],10); } else { updatedCount = items.length; failedCount = 0; }
+        } catch(e){ updatedCount = items.length; failedCount = 0; }
+      }
+      // Treat as success if we have non-zero updated or parse says success
+      const isSuccess = (res && res.success) || updatedCount >= 0;
+      if(isSuccess){
+        status.textContent = 'Updated ' + updatedCount + ' locators successfully' + (failedCount>0 ? (', ' + failedCount + ' failed') : '');
+        status.style.color = failedCount > 0 ? '#b00020' : '#0a7d13';
+        // Mark successful checkboxes as disabled (best-effort when we have results)
+        if(res && Array.isArray(res.results)){
+          const cbs = Array.from(checkedBoxes);
+          res.results.forEach(r => { if(r && r.success && typeof r.index === 'number' && cbs[r.index]){ cbs[r.index].disabled = true; cbs[r.index].checked = false; } });
+        } else if(updatedCount === items.length && failedCount === 0){
+          // If all succeeded, disable all selected
+          checkedBoxes.forEach(cb => { cb.disabled = true; cb.checked = false; });
+        }
+        updateSelectedBtn.disabled = false;
+      } else {
+        status.textContent = 'Failed: ' + (res && res.message ? res.message : 'unknown error');
+        status.style.color = '#b00020';
+        updateSelectedBtn.disabled = false;
+      }
+    } catch(e){
+      status.textContent = 'Request failed';
+      status.style.color = '#b00020';
+      updateSelectedBtn.disabled = false;
+    }
+  });
+ }
+ 
+ // Stop server functionality
+ const stopBtn = document.getElementById('stop-server-btn');
+ if(stopBtn){
+  stopBtn.addEventListener('click', async function(){
+    const st = document.getElementById('stop-status');
+    stopBtn.disabled = true; 
+    st.textContent = 'Stopping server...'; 
+    st.style.color = '';
+    
+    try{
+      const txt = await fetch('http://127.0.0.1:'+port+'/rtc-report/stop', {method: 'POST', body: ''}).then(r => r.text());
+      let res; 
+      try { res = JSON.parse(txt); } catch(_) { res = null; }
+      
+      if((res && res.success) || txt !== undefined){ 
+        st.textContent = 'Finished'; 
+        st.style.color = '#0a7d13'; 
+      } else { 
+        st.textContent = 'Failed to stop server'; 
+        st.style.color = '#b00020'; 
+        stopBtn.disabled = false; 
+      }
+    } catch(e){ 
+      // If server is already stopped or unreachable, consider it successful
+      if(e.name === 'TypeError' && e.message.includes('fetch')) {
+        st.textContent = 'Finished'; 
+        st.style.color = '#0a7d13';
+      } else {
+        st.textContent = 'Request failed'; 
+        st.style.color = '#b00020'; 
+        stopBtn.disabled = false;
+      }
+    }
+  });
+ }
+})();
+</script>
+</body>
+</html>

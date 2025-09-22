@@ -10,7 +10,7 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_id
   Scenario: Broken ID locator
-    When I try to locate by "id" with value "menu-main-men"
+    When I try to locate by "id" with value "//ul[@id="menu-main-menu"]"
     Then the step should fail due to locator issue
 
   @bad_name
@@ -20,7 +20,7 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_classname
   Scenario: Broken CLASSNAME locator
-    When I try to locate by "className" with value "elementor-heading-tit"
+    When I try to locate by "className" with value "elementor-heading-titlee"
     Then the step should fail due to locator issue
 
   @bad_css_1
@@ -35,7 +35,7 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_xpath_1
   Scenario: Broken XPATH - wrong id
-    When I try to locate by "xpath" with value "//*[@id='menu-item-4711']/a"
+    When I try to locate by "xpath" with value "//a[text()='About Us']"
     Then the step should fail due to locator issue
 
   @bad_xpath_2
@@ -45,7 +45,7 @@ Feature: RTCtek - Demonstrate failing locators across strategies
 
   @bad_linktext
   Scenario: Broken LINKTEXT locator
-    When I try to locate by "linkText" with value "Contact U"
+    When I try to locate by "linkText" with value "linktext:Contact Us"
     Then the step should fail due to locator issue
 
   @bad_partiallinktext
